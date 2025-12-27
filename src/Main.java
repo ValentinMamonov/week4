@@ -22,8 +22,12 @@ public class Main {
 
         int count = 0;
         for (int i = 0; i < n; i++) {
-            if (strings[i].contains(search)) {
+            String currentString = strings[i];
+            int index = 0;
+
+            while ((index = currentString.indexOf(search, index)) != -1) {
                 count++;
+                index += 1;
             }
         }
         System.out.println("Количество вхождений: " + count);
